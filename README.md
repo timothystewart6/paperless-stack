@@ -7,7 +7,7 @@ Docker Compose stack for running Paperless-ngx with optional local AI capabiliti
 1. **Clone and configure**
 
    ```bash
-   git clone git@github.com:timothystewart6/paperless-stack.git
+   git clone https://github.com/timothystewart6/paperless-stack.git
    cd paperless-stack
    ```
 
