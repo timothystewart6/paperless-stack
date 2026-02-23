@@ -75,7 +75,7 @@ services:
 
   # ollama service for local LLMs
   ollama:
-    image: ollama/ollama:latest
+    image: ollama/ollama:rocm #AMD card
     container_name: ollama
     env_file:
       - ./ollama/.env
@@ -87,10 +87,9 @@ services:
       resources:
         reservations:
           devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-
+            - /dev/dri:/dev/dri #AMD device video/render
+            - /dev/kfd:/dev/kfd #AMD device video/render
+              
   # paperless-ai service
   paperless-ai:
     image: clusterzx/paperless-ai:latest
